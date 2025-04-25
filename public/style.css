@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.search-container {
+    margin-top: 20px;
+    margin-left: 0px;
+}
+
+input {
+    width: 450px;
+    padding: 8px;
+    font-size: 16px;
+}
+
+button {
+    padding: 8px 15px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#results {
+    margin-top: 10px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.result-item {
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 5px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.search-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between; /* 左右分散對齊 */
+    gap :20px;
+}
+.search_left {
+    display: flex;
+    align-items: center;
+}
+.search_left img {
+    height: 40px; /* 自訂圖大小 */
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+.suggestions-list {
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    position: absolute;
+    background: white;
+    width: 300px;
+    z-index: 100;
+    margin-top: 5px;
+    display: none;
+}
+
+.suggestions-list div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestions-list div:hover {
+    background-color: #f0f0f0;
+}
+
+.news-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.news-item {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.news-item a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.news-item a:hover {
+    text-decoration: underline;
+}
+
+/* 統一表格樣式 */
+.ranking-table {
+    width: 100%; /* 表格寬度設置為 100% */
+    border-collapse: collapse; /* 合併邊框 */
+    margin-bottom: 20px; /* 表格之間的間距 */
+    font-size: 14px; /* 字體大小 */
+    text-align: center; /* 文字居中 */
+}
+
+/* 表格邊框 */
+.ranking-table th, .ranking-table td {
+    border: 1px solid #ddd; /* 單元格邊框 */
+    padding: 8px; /* 單元格內邊距 */
+}
+
+/* 表格標題背景色 */
+.ranking-table th {
+    background-color: #f4f4f4; /* 淺灰色背景 */
+    font-weight: bold; /* 加粗字體 */
+}
+
+/* 表格行的背景色交替 */
+.ranking-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* 偶數行背景色 */
+}
+
+.ranking-table tr:hover {
+    background-color: #f1f1f1; /* 滑鼠懸停行的背景色 */
+}
+
+/* 分區標題樣式 */
+.ranking-table h3 {
+    margin: 10px 0;
+    font-size: 16px;
+    text-align: left;
+}
+/* 限制建議欄的寬度 */
+#suggestions {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%; /* 設置寬度與父容器一致 */
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* 確保搜尋框和建議欄在同一容器內 */
+.search-container {
+    position: relative;
+    width: fit-content; /* 根據內容調整寬度 */
+}
