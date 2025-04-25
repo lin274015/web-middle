@@ -34,3 +34,21 @@ node searchPlayer.js
 確保您的電腦已安裝 Node.js。
 啟動伺服器時，請確保埠號未被其他應用程式佔用。
 如果需要修改埠號，請在相應的伺服器檔案中調整。
+
+## sign in截圖
+![sign in](https://raw.githubusercontent.com/lin274015/web-middle/main/sign%20in.png)
+
+## myblog截圖
+![myblog](https://github.com/lin274015/web-middle/blob/61eeedaf5556d0d662c6f72511999c8cded48cfb/blog.png)
+
+## index截圖
+![index](https://github.com/lin274015/web-middle/blob/61eeedaf5556d0d662c6f72511999c8cded48cfb/index.png)
+
+## log in截圖
+![log in](https://github.com/lin274015/web-middle/blob/61eeedaf5556d0d662c6f72511999c8cded48cfb/log%20in.png)
+
+## searchPlayer範例截圖
+![searchPlayer範例](https://github.com/lin274015/web-middle/blob/61eeedaf5556d0d662c6f72511999c8cded48cfb/searchPlayer.png)
+
+## drop-down menu截圖
+![drop-down menu](https://github.com/lin274015/web-middle/blob/61eeedaf5556d0d662c6f72511999c8cded48cfb/drop-down%20menu.png)
