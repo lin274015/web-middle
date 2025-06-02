@@ -6,7 +6,8 @@
     <meta name="author" content="啟銓">
     <meta name="keywords" content="啟銓, html, mlb 搜尋">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
     <title>啟銓MLB球員數據搜尋網站</title>
 </head>
 <body>
@@ -18,23 +19,22 @@
             <li><a href="blog.html">My Blog</a></li>
             <li><a href="lab2_sign_in.html">Sign in</a></li>
             <li><a href="lab2_login.html">Log in</a></li>
+            <li><a href="https://fantasy.espn.com/baseball/team?leagueId=474093520&teamId=7&seasonId=2025">ESPN fantasy baseball</a></li>
         </ul>
     </nav>
 
     <!-- 搜尋區 -->
     <header class="search-header">
         <div class="search_left">
-            <img src="image/baseball_reference.png" />
+            <img src="/static/image/baseball_reference.png" alt="Baseball Reference" />
             <span class="brand-name"><b>BASEBALL</b> REFERENCE</span>
         </div>
-
-        <div class="search-container">
-            <input type="text" id="playerNameInput" placeholder="輸入球員名稱..." oninput="showSuggestions()" autocomplete="off">
-            <div id="suggestions" class="dropdown"></div> <!-- 用於顯示下拉選單 -->
-            <button onclick="searchPlayer()">搜尋</button>
-        </div>
+        <form action="/search-player" method="GET" class="search-container">
+    <input type="text" name="name" id="playerNameInput" placeholder="輸入球員名稱..." autocomplete="off" oninput="showSuggestions()">
+    <div id="autocomplete-results" class="autocomplete-results"></div>
+    <button type="submit">搜尋</button>
+</form>
     </header>
-
     <!-- 主要內容區 -->
     <section id="content" style="display: flex; gap: 20px; margin-top: 40px;">
         <!-- 左側新聞區 -->
@@ -55,12 +55,6 @@
             </div>
         </div>
     </section>
-
-    <!-- 球員數據結果 -->
-    <section id="playerResult" style="margin-top: 40px; text-align: center;">
-        <!-- 查詢結果將由 JavaScript 動態生成 -->
-    </section>
-
-    <script src="script.js"></script>
+    <script src="/static/script.js"></script>
 </body>
 </html>

@@ -23,29 +23,30 @@ app.get('/player', async (req, res) => {
             return res.status(404).json({ error: '無法找到球員基本信息' });
         }
 
-        // 獲取球員賽季數據
+        // 獲取球員賽季數據（打者數據）
         const statsResponse = await axios.get(`https://statsapi.mlb.com/api/v1/people/${playerId}/stats?stats=season&season=2025`);
         const statsData = statsResponse.data.stats[0]?.splits[0]?.stat;
         if (!statsData) {
             return res.status(404).json({ error: '無法找到球員賽季數據' });
         }
 
-        // 組合球員信息
+        // 組合打者數據
         const playerInfo = {
             name: playerData.fullName,
-            team: playerData.currentTeam?.name || '未知球隊', // 確保正確解析 currentTeam
+            team: playerData.currentTeam?.name || '未知球隊',
             position: playerData.primaryPosition?.name || '未知位置',
             nationality: playerData.birthCountry,
             height: playerData.height,
             weight: playerData.weight,
             birthDate: playerData.birthDate,
             stats: {
-                avg: statsData.avg,
-                hr: statsData.homeRuns,
-                rbi: statsData.rbi,
-                obp: statsData.obp,
-                slg: statsData.slg,
-                ops: statsData.ops
+                games: statsData.gamesPlayed || 0,
+                avg: statsData.avg || '0.000',
+                hr: statsData.homeRuns || 0,
+                rbi: statsData.rbi || 0,
+                obp: statsData.obp || '0.000',
+                slg: statsData.slg || '0.000',
+                ops: statsData.ops || '0.000'
             },
             photo: `https://img.mlbstatic.com/mlb-photos/image/upload/w_150,q_auto:best/v1/people/${playerId}/headshot/67/current`
         };
@@ -90,6 +91,7 @@ app.get('/search-player', async (req, res) => {
         res.status(500).json({ error: '無法查詢球員數據' });
     }
 });
+
 // 啟動伺服器
 app.listen(PORT, () => {
     console.log(`伺服器已啟動：http://localhost:${PORT}`);

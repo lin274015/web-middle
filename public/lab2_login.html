@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lab2</title>
+    <title>登入頁面</title>
     <style>
         /* 全局樣式 */
         body {
@@ -92,21 +92,23 @@
     <h3>請填入你的個人資訊以進行登入</h3>
 
     <div class="form-container">
-        <label>帳號：</label>
-        <input type="text" placeholder="請輸入帳號" />
+        <form method="POST" action="/lab2_login.html">
+            <label>帳號：</label>
+            <input type="text" name="username" placeholder="請輸入帳號" required />
 
-        <label>密碼：</label>
-        <input type="password" placeholder="請輸入密碼" />
+            <label>密碼：</label>
+            <input type="password" name="password" placeholder="請輸入密碼" required />
 
-        <!-- 新增：棒球了解程度選項 -->
-        <h3>請選擇你對棒球的了解程度</h3>
-        <div class="radio-group">
-            <label><input type="radio" name="baseball_knowledge" value="新手" /> 新手</label>
-            <label><input type="radio" name="baseball_knowledge" value="略懂一點" /> 略懂一點</label>
-            <label><input type="radio" name="baseball_knowledge" value="老手" /> 老手</label>
-        </div>
+            <!-- 新增：棒球了解程度選項 -->
+            <h3>請選擇你對棒球的了解程度</h3>
+            <div class="radio-group">
+                <label><input type="radio" name="baseball_knowledge" value="新手" /> 新手</label>
+                <label><input type="radio" name="baseball_knowledge" value="略懂一點" /> 略懂一點</label>
+                <label><input type="radio" name="baseball_knowledge" value="老手" /> 老手</label>
+            </div>
 
-        <button type="submit" class="btn">登入</button>
+            <button type="submit" class="btn">登入</button>
+        </form>
 
         <p class="register">如果尚未註冊帳號，請點擊下方註冊進行註冊</p>
         <a href="lab2_register.html">註冊</a>

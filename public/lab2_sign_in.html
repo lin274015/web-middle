@@ -5,23 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>註冊</title>
     <style>
-        /* 全局樣式 */
         body {
             text-align: center;
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
         }
-
-        /* 標題樣式 */
-        h2 {
-            color: #333;
-        }
-
-        h3 {
-            color: #666;
-        }
-
-        /* 註冊表單容器 */
         .form-container {
             background: white;
             width: 350px;
@@ -31,10 +19,7 @@
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
             text-align: left;
         }
-
-        /* 輸入框樣式 */
-        input[type="text"],
-        input[type="password"] {
+        input[type="text"], input[type="password"] {
             width: 90%;
             padding: 8px;
             margin-top: 5px;
@@ -42,8 +27,6 @@
             border-radius: 5px;
             display: block;
         }
-
-        /* 按鈕樣式 */
         .btn {
             background-color: #007bff;
             color: white;
@@ -54,32 +37,8 @@
             width: 95%;
             font-size: 16px;
         }
-
         .btn:hover {
             background-color: #0056b3;
-        }
-
-        /* 註冊成功的提示 */
-        .success-message {
-            color: green;
-            display: none;
-            font-size: 14px;
-            margin-top: 10px;
-        }
-
-        /* 連結樣式 */
-        .login-link {
-            margin-top: 10px;
-            font-size: 14px;
-        }
-
-        .login-link a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .login-link a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
@@ -89,35 +48,19 @@
     <h3>請填入你的個人資訊進行註冊</h3>
 
     <div class="form-container">
-        <label>帳號：</label>
-        <input type="text" id="username" placeholder="請輸入帳號" />
+        <form method="POST" action="/lab2_sign_in.html">
+            <label>帳號：</label>
+            <input type="text" name="username" placeholder="請輸入帳號" required />
 
-        <label>密碼：</label>
-        <input type="password" id="password" placeholder="請輸入密碼" />
+            <label>密碼：</label>
+            <input type="password" name="password" placeholder="請輸入密碼" required />
 
-        <button type="submit" class="btn" onclick="register()">註冊</button>
+            <button type="submit" class="btn">註冊</button>
+        </form>
 
-        <p class="success-message" id="successMessage">✅ 註冊成功！請返回登入頁面。</p>
-
-        <p class="login-link">如果已經註冊，請點擊下方返回登入頁面</p>
+        <p>如果已經註冊，請點擊下方返回登入頁面</p>
         <a href="lab2_login.html">登入</a>
     </div>
-
-    <script>
-        function register() {
-            let username = document.getElementById("username").value;
-            let password = document.getElementById("password").value;
-
-            if (username === "" || password === "") {
-                alert("❌ 請輸入帳號和密碼！");
-                return;
-            }
-
-            // 模擬註冊成功
-            document.getElementById("successMessage").style.display = "block";
-            alert("✅ 註冊成功！請返回登入頁面。");
-        }
-    </script>
 
 </body>
 </html>
