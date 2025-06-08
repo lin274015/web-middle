@@ -7,9 +7,12 @@
 即時新聞：顯示最新的 MLB 新聞。
 分區排名：提供美聯與國聯的分區排名。
 動態下拉建議：輸入球員名稱時，提供相關建議。
+
+待決定功能：是否需要註冊登入
+
 使用技術
 前端：HTML5、CSS3、JavaScript
-後端：Node.js、Express.js
+後端：Node.js、Express.js、flask
 資料來源：MLB Stats API
 工具：Git、GitHub、Visual Studio Code
 安裝與執行
@@ -47,8 +50,12 @@ node searchPlayer.js
 ## log in截圖
 ![log in](https://github.com/lin274015/web-middle/blob/61eeedaf5556d0d662c6f72511999c8cded48cfb/log%20in.png)
 
-## searchPlayer範例截圖
-![searchPlayer範例](https://github.com/lin274015/web-middle/blob/61eeedaf5556d0d662c6f72511999c8cded48cfb/searchPlayer.png)
+## playerChart 截圖  
+![playerChart](https://github.com/lin274015/web-middle/blob/main/public/static/image/playerChart.png)
+
+## searchPlayer 截圖（更新後）  
+![searchPlayer](https://github.com/lin274015/web-middle/blob/main/public/static/image/searchPlayer.png)
+
 
 ## drop-down menu截圖
 ![drop-down menu](https://github.com/lin274015/web-middle/blob/61eeedaf5556d0d662c6f72511999c8cded48cfb/drop-down%20menu.png)
